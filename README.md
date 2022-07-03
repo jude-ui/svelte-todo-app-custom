@@ -1,4 +1,4 @@
-# Svelte 템플릿 with Snowpack
+# Svelte Todo App Custom
 
 ## Installation
 
