@@ -17,7 +17,7 @@
 </script>
 
 <div class="group_opt" class:opt_open={isOptOpen}><!-- opt_open 으로 제어 -->
-  <a href="#none" class="link_opt" on:click={() => isOptOpen = !isOptOpen}>
+  <a href="#none" class="link_opt" on:click|preventDefault={() => isOptOpen = !isOptOpen}>
     {$txtCurrentSort}<span class="material-icons-outlined ico_arr" aria-hidden="true">expand_more</span>
   </a>
   <ul class="list_opt">
