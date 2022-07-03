@@ -1,6 +1,8 @@
 # Svelte Todo App Custom
 
-## Pages : [https://jude-ui.github.io/svelte-todo-app-custom/](https://jude-ui.github.io/svelte-todo-app-custom/)
+## Page
+- [Todo List](https://jude-ui.github.io/svelte-todo-app-custom/)
+
 ## Installation
 
 ```bash
