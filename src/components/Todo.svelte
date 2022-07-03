@@ -71,12 +71,25 @@
           if(e.key === 'Enter') updateTodo()
         }}
         type="text">
-      <button 
-        on:click={updateTodo}
-        class="btn btn_primary">OK</button>
-      <button
-        on:click={offEditMode}
-        class="btn btn_secondary">Cancel</button>
+      <div class="group_btn_m">
+        <button
+          type="button"
+          on:click={updateTodo}
+          class="material-icons-outlined"
+          aria-label="OK">check_circle</button>
+        <button
+          type="button"
+          on:click={offEditMode}
+          class="material-icons-outlined">cancel</button>
+      </div>
+      <div class="group_btn_pc">
+        <button 
+          on:click={updateTodo}
+          class="btn btn_primary">OK</button>
+        <button
+          on:click={offEditMode}
+          class="btn btn_secondary">Cancel</button>
+      </div>
     </div>
   {:else}
     <div class="mode_normal">
@@ -107,16 +120,26 @@
         </div>
         <div class="txt_more">{todo.title}</div>
       </div>
-      <button
-        class="btn btn_secondary"
-        on:click={onEditMode}>
-        Edit
-      </button>
-      <button
-        on:click={onDeleteTodoLayer}
-        class="btn btn_danger">
-        Delete
-      </button>
+      <div class="group_btn_m">
+        <button
+          type="button"
+          on:click={onEditMode}
+          class="material-icons-outlined">edit</button>
+        <button
+          type="button"
+          on:click={onDeleteTodoLayer}
+          class="material-icons-outlined">delete</button>
+      </div>
+      <div class="group_btn_pc">
+        <button
+          type="button"
+          class="btn btn_secondary"
+          on:click={onEditMode}>Edit</button>
+        <button
+          type="button"
+          on:click={onDeleteTodoLayer}
+          class="btn btn_danger">Delete</button>
+      </div>
     </div>
   {/if}
 
