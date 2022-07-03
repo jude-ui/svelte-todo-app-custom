@@ -56,3 +56,6 @@ __snowpack__: snowpack 번들러 패키지<br>
     - 수정이 되었을 때 수정이 된 시각으로 수정되도록 처리 작업
 - todo 완료를 나타내는 체크박스를 추가하고 데이터 연동 작업
   - 완료시 타이틀 색상 변경 및 취소선 생기도록 클래스 핸들링 작업
+
+## vue.js로도 만들어 보기
+- [vue3 Todo List](https://github.com/jude-ui/vue3-todo-app-custom)
