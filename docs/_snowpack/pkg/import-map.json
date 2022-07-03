@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "moment": "./moment.js",
+    "moment/locale/ko": "./moment/locale/ko.js",
+    "shortid": "./shortid.js",
+    "svelte/internal": "./svelte/internal.js",
+    "svelte/store": "./svelte/store.js"
+  }
+}

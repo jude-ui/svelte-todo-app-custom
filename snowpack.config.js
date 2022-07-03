@@ -18,5 +18,8 @@ module.exports = {
   },
   devOptions: {
     open: 'none'
+  },
+  buildOptions: {
+    out: './docs'
   }
 }
