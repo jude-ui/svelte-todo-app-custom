@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     '@snowpack/plugin-svelte',
     '@snowpack/plugin-optimize',
+    '@snowpack/plugin-postcss',
     'babel-plugin-transform-remove-console',
     ['@snowpack/plugin-babel', {
       transformOptions: babelOptions()
