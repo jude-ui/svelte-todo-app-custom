@@ -22,10 +22,12 @@
     "@snowpack/plugin-svelte": "^3.7.0",
     "autoprefixer": "^10.4.7",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "postcss": "^8.4.14",
     "shortid": "^2.2.16",
     "snowpack": "^3.8.8",
+    "sortablejs": "^1.15.0",
     "svelte": "^3.48.0"
   }
 }

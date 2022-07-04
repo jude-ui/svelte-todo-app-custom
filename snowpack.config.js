@@ -9,7 +9,6 @@ module.exports = {
     '@snowpack/plugin-svelte',
     '@snowpack/plugin-optimize',
     '@snowpack/plugin-postcss',
-    '@snowpack/plugin-sass',
     'babel-plugin-transform-remove-console',
     ['@snowpack/plugin-babel', {
       transformOptions: babelOptions()

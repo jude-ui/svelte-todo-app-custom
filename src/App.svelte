@@ -1,5 +1,7 @@
 <script>
-  import { todos, initStorage, isListRecent, saveStorage } from '~/store'
+  import Sortable from 'sortablejs'
+  import { onMount } from 'svelte'
+  import { todos, initStorage, isListRecent, saveStorage, todosOrder } from '~/store'
   import Todo from '~/components/Todo'
   import CreateTodo from '~/components/CreateTodo'
   import ListOrderSetting from '~/components/ListOrderSetting'
@@ -31,6 +33,26 @@
   function cancelInit() {
     isLayerOn = false
   }
+
+
+  let listTodos
+  let sortableLists
+  onMount(() => {
+    sortableLists = new Sortable(listTodos, {
+      group: 'Todo Lists',
+      handle: '.list_todo .btn_move',
+      delay: 50,
+      animation: 0,
+      forceFallback: true,
+      onEnd(e) {
+        todosOrder({
+          oldIndex: e.oldIndex,
+          newIndex: e.newIndex
+        })
+      }
+    })
+  });
+  
 </script>
 
 <div class="container">
@@ -43,7 +65,7 @@
         on:click={checkInit}
         type="button" 
         class="btn btn_danger btn_init">
-        목록 초기화 <span class="material-icons-outlined ico_delete" aria-hidden="true">delete</span>
+        전체 삭제<span class="material-icons-outlined ico_delete" aria-hidden="true">delete</span>
       </button>
       {#if isLayerOn}
       <CommonLayer 
@@ -55,16 +77,12 @@
     </div>
     <!-- // info_setting -->
     
-    <ul class="list_todo">
+    <ul
+      bind:this={listTodos}
+      class="list_todo">
       {#each $todos as todo (todo.id)}
         <Todo {todo} />
       {/each}
     </ul>
   {/if}
 </div>
-
-<style lang="scss">
-  h1{
-    color: $color;
-  }
-</style>

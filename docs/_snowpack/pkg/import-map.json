@@ -1,8 +1,11 @@
 {
   "imports": {
+    "lodash/cloneDeep": "./lodash/cloneDeep.js",
     "moment": "./moment.js",
     "moment/locale/ko": "./moment/locale/ko.js",
     "shortid": "./shortid.js",
+    "sortablejs": "./sortablejs.js",
+    "svelte": "./svelte.js",
     "svelte/internal": "./svelte/internal.js",
     "svelte/store": "./svelte/store.js"
   }

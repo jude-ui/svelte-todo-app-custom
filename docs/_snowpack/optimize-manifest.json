@@ -10,11 +10,14 @@
         "https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       ],
       "js": [
-        "/_snowpack/pkg/common/_commonjsHelpers-4f56b6ba.js",
-        "/_snowpack/pkg/common/index-fc2a7fc9.js",
+        "/_snowpack/pkg/common/_commonjsHelpers-51a8d081.js",
+        "/_snowpack/pkg/common/index-bb8214e0.js",
+        "/_snowpack/pkg/lodash/cloneDeep.js",
         "/_snowpack/pkg/moment.js",
         "/_snowpack/pkg/moment/locale/ko.js",
         "/_snowpack/pkg/shortid.js",
+        "/_snowpack/pkg/sortablejs.js",
+        "/_snowpack/pkg/svelte.js",
         "/_snowpack/pkg/svelte/internal.js",
         "/_snowpack/pkg/svelte/store.js",
         "/dist/App.svelte.js",
