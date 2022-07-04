@@ -62,3 +62,9 @@
     </ul>
   {/if}
 </div>
+
+<style lang="scss">
+  h1{
+    color: $color;
+  }
+</style>
