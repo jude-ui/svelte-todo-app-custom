@@ -20,8 +20,8 @@ $ npm run dev
 - Svelte
 - Snowpack
 - Babel
-- moment
-- shortid
+- PostCSS
+- Autoprefixer
 
 ## Packages
 
@@ -30,6 +30,9 @@ __@snowpack/plugin-babel__: svelte 파일이 아닌 `.js, .jsx, .mjs, .ts, .tsx`
 __@snowpack/plugin-optimize__: 결과물을 압축 및 암호화 시켜주는 플러그인<br>
 
 __babel-plugin-transform-remove-console__: production 모드에서 콘솔을 모두 지워주는 기능을 가진 패키지<br>
+
+__postcss__: Autoprefixer 등의 다양한 스타일 후처리기 패키지<br>
+__autoprefixer__: 스타일에 자동으로 공급 업체 접두사(Vendor prefix)를 적용하는 PostCSS의 플러그인<br>
 
 __moment__: 다양한 양식의 시간 데이터 출력을 도와주는 패키지<br>
 __shortid__: 고유한 id값을 랜덤으로 생성해주는 패키지<br>
@@ -53,6 +56,7 @@ __lodash__: 객체를 다양하게 조작하게 해주는 헬퍼 라이브러리
 - todo 아이템을 삭제할 때 뜨는 삭제용 레이어 팝업과, todo 목록 초기화할 때 뜨는 확인용 레이어 팝업을 공통화 시키기 위한 작업
 - todo 목록이 모두 비어있을 때 목록 초기화 및 최신순/과거순 설정 ui 숨김 처리 작업
 - todo를 빈 문자열로 수정했을 때 todo 삭제 처리 작업
+  - 빈 문자열로 수정해서 삭제됐을 때도 로컬 스토리지 반영 작업
 - moment 라이브러리 사용하여 todo를 만들 때 입력한 시간 등록하는 작업
 - todo를 수정할 때 (수정됨) 이라는 문구가 들어가도록 작업
   - edit 버튼을 누른 후 변경사항 없이 ok 를 눌렀을 땐 (수정됨) 문구를 넣으면 안되는 처리 작업

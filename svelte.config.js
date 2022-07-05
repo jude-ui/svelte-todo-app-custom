@@ -1,6 +1,6 @@
 const { babelOptions } = require('./babelOptions.js')
 
-module.export = {
+module.exports = {
   preprocess: require('svelte-preprocess')({
     babel: babelOptions()
   })

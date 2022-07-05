@@ -24,8 +24,11 @@
     // 빈 문자열로 수정할 경우 목록에서 삭제
     if (!title.trim()) {
       $todos = $todos.filter(t => t.id !== todo.id)
+      console.log('test1')
+      saveStorage() // 로컬 스토리지 반영
       return
     }
+    console.log('test2')
     
     updateTime() // 시간 업데이트
     todo.title = title.trim() // store 반영
