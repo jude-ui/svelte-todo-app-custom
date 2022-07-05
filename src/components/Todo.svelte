@@ -4,7 +4,7 @@
   import moment from 'moment'
   
   export let todo // todo 데이터
-
+  
   let isEditMode = false
   let title = ''
   let isLayerOn = false

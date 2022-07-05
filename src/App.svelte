@@ -29,12 +29,19 @@
     $todos = []
     initStorage()
     isLayerOn = false
+    isOrderEdit = false // todo 모두 삭제시 순서 변경 모드 off
   }
   function cancelInit() {
     isLayerOn = false
   }
+  
+  // 순서 변경 모드 on/off
+  let isOrderEdit = false
+  function orderEdit() {
+    isOrderEdit = !isOrderEdit
+  }
 
-
+  // 순서 변경 기능
   let listTodos
   let sortableLists
   onMount(() => {
@@ -49,6 +56,7 @@
           oldIndex: e.oldIndex,
           newIndex: e.newIndex
         })
+        isOrderEdit
       }
     })
   });
@@ -69,20 +77,27 @@
       </button>
       {#if isLayerOn}
       <CommonLayer 
-        tit_layer='Todo 목록을 모두 초기화 시키겠습니까?'
+        tit_layer='Todo 목록을 모두 삭제하겠습니까?'
         btn_fn1={initTodos}
         btn_fn2={cancelInit} />
       {/if}
+      <button
+        on:click={orderEdit}
+        type="button"
+        class="btn btn_danger btn_order_change">
+        순서 변경<span class="material-icons-outlined ico_change" aria-hidden="true">swap_vert</span>
+      </button>
       <ListOrderSetting />
     </div>
     <!-- // info_setting -->
-    
+    {/if}
     <ul
       bind:this={listTodos}
+      class:active={$todos.length}
+      class:edit_on={isOrderEdit}
       class="list_todo">
       {#each $todos as todo (todo.id)}
         <Todo {todo} />
       {/each}
     </ul>
-  {/if}
 </div>
