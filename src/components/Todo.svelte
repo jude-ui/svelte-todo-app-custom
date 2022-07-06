@@ -1,5 +1,5 @@
 <script>
-  import { todos, saveStorage } from '~/store'
+  import { todos, saveStorage, selectedTodoItem } from '~/store'
   import CommonLayer from '~/components/CommonLayer'
   import moment from 'moment'
   
@@ -8,8 +8,17 @@
   let isEditMode = false
   let title = ''
   let isLayerOn = false
-  let checkDone = todo.isDone ? 'check_box' : 'check_box_outline_blank'
-
+  let checked = false
+  $: txtCheckBox = checked ? 'check_box' : 'check_box_outline_blank'
+  function selectTodo() {
+    if (checked) {
+      console.log('체크 해제됨');
+      $selectedTodoItem = $selectedTodoItem.filter(t => t !== todo.id)
+    } else {
+      console.log('체크됨');
+      $selectedTodoItem.push(todo.id)
+    }
+  }
   function onEditMode() {
     // input에 todo 데이터 반영하여 수정 상태 on
     title = todo.title
@@ -24,11 +33,9 @@
     // 빈 문자열로 수정할 경우 목록에서 삭제
     if (!title.trim()) {
       $todos = $todos.filter(t => t.id !== todo.id)
-      console.log('test1')
       saveStorage() // 로컬 스토리지 반영
       return
     }
-    console.log('test2')
     
     updateTime() // 시간 업데이트
     todo.title = title.trim() // store 반영
@@ -44,7 +51,6 @@
 
   function updateTodoDone() {
     todo.isDone = !todo.isDone
-    checkDone = todo.isDone ? 'check_box' : 'check_box_outline_blank'
     updateTime() // 시간 업데이트
     saveStorage() // 로컬 스토리지 반영
   }
@@ -100,6 +106,26 @@
         <button type="button" class="material-icons-outlined btn_move" aria-label="순서 이동 버튼">
           dehaze
         </button>
+
+        <div class="group_check">
+          <input
+            title="할일 선택"
+            id="select_{todo.id}"
+            type="checkbox"
+            bind:checked
+            on:click={selectTodo}
+            class="inp_check">
+          <label
+            class="lab_check"
+            for="select_{todo.id}">
+            <span class="screen_out">선택</span>
+            <div
+              class="material-icons-outlined ico_check"
+              aria-hidden="true">
+              {txtCheckBox}
+            </div>
+          </label>
+        </div>
         <div class="group_check">
           <input
             title="할일 완료"
@@ -107,16 +133,15 @@
             type="checkbox"
             class="inp_check"
             checked={todo.isDone}
-            on:click={updateTodoDone}
-            >
+            on:click={updateTodoDone}>
           <label
             class="lab_check"
             for="{todo.id}">
             <span class="screen_out">완료</span>
             <div
-              class="material-icons-outlined ico_check"
+              class="material-icons ico_check"
               aria-hidden="true">
-              {checkDone}
+              done
             </div>
           </label>
         </div>

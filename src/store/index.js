@@ -6,6 +6,7 @@ export const isListRecent = writable(true)
 export const txtCurrentSort = derived(isListRecent, ($isListRecent) => {
   return $isListRecent ? '최신순' : '과거순'
 })
+export const selectedTodoItem = writable([])
 export function saveStorage() {
   localStorage.setItem('todos', JSON.stringify(get(todos)))
   localStorage.setItem('isListRecent', JSON.stringify(get(isListRecent)))
