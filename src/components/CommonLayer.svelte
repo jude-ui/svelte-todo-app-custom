@@ -6,7 +6,7 @@
   export let tit_layer = '레이어 제목'
 </script>
 
-<div class="dimmed_layer">
+<div class="dimmed_layer" on:click|self={btn_fn2}>
   <div class="inner_dimmed_layer">
     <div class="layer_body">
       <strong>{tit_layer}</strong>

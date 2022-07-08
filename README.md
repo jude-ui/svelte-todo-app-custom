@@ -7,7 +7,7 @@
 
 ```bash
 # Default
-$ npx degit jude-ui/svelte-todo-app <Project Name>
+$ npx degit jude-ui/svelte-todo-app-custom <Project Name>
 
 # Start!
 $ cd <Project Name>
@@ -75,4 +75,4 @@ __lodash__: 객체를 다양하게 조작하게 해주는 헬퍼 라이브러리
     - 삭제 시 선택한 todo 배열도 초기화
 
 ## vue.js로도 만들어 보기
-- [vue3 Todo List](https://github.com/jude-ui/vue3-todo-app-custom)
+- [Vue3 Todo List](https://github.com/jude-ui/vue3-todo-app-custom)
