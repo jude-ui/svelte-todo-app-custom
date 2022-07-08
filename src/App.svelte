@@ -66,7 +66,6 @@
   let isDeleteSelectedLayer = false
   // 선택 삭제 확인 팝업 open
   function checkDeleteSelectedTodo() {
-    console.log('$selectedTodoItem', $selectedTodoItem)
     if (!$selectedTodoItem.length) return // 선택된 todo 없을 경우 레이어 작동 X
     isDeleteSelectedLayer = true
   }

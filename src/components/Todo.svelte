@@ -12,10 +12,10 @@
   $: txtCheckBox = checked ? 'check_box' : 'check_box_outline_blank'
   function selectTodo() {
     if (checked) {
-      console.log('체크 해제됨');
+      // console.log('체크 해제됨');
       $selectedTodoItem = $selectedTodoItem.filter(t => t !== todo.id)
     } else {
-      console.log('체크됨');
+      // console.log('체크됨');
       $selectedTodoItem.push(todo.id)
     }
   }
