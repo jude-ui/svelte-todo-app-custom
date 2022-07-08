@@ -99,9 +99,10 @@
       </button>
       {#if isDeleteAllLayer}
       <CommonLayer 
-        tit_layer='Todo 목록을 모두 삭제하겠습니까?'
         btn_fn1={deleteAllTodo}
-        btn_fn2={cancelDeleteAllTodo} />
+        btn_fn2={cancelDeleteAllTodo}>
+        Todo 목록을 모두 삭제하겠습니까?
+      </CommonLayer>
       {/if}
       <button
         on:click={orderEdit}
@@ -118,9 +119,10 @@
 
       {#if isDeleteSelectedLayer}
       <CommonLayer
-        tit_layer='선택한 Todo 목록을 모두 삭제하겠습니까?'
         btn_fn1={deleteSelectedTodo}
-        btn_fn2={cancelDeleteSelectedTodo} />
+        btn_fn2={cancelDeleteSelectedTodo}>
+        선택한 Todo 목록을 모두 삭제하겠습니까?
+      </CommonLayer>
       {/if}
 
       <ListOrderSetting />

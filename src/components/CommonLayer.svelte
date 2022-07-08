@@ -3,13 +3,14 @@
   export let btn_fn2
   export let btn_txt1 = '확인'
   export let btn_txt2 = '취소'
-  export let tit_layer = '레이어 제목'
 </script>
 
 <div class="dimmed_layer" on:click|self={btn_fn2}>
   <div class="inner_dimmed_layer">
     <div class="layer_body">
-      <strong>{tit_layer}</strong>
+      <strong>
+        <slot>레이어 제목</slot>
+      </strong>
     </div>
     <div class="layer_foot">
       <button

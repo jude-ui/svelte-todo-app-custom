@@ -175,8 +175,9 @@
   {/if}
   {#if isLayerOn}
     <CommonLayer 
-      tit_layer='삭제하시겠습니까?'
       btn_fn1={deleteTodo}
-      btn_fn2={cancelDelete} />
+      btn_fn2={cancelDelete}>
+      삭제하시겠습니까?
+    </CommonLayer>
   {/if}
 </li>
