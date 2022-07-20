@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* layout */
-.container{max-width:800px;min-width:280px;margin:0 auto;padding:0 15px 40px}
+.container{max-width:1100px;min-width:280px;margin:0 auto;padding:0 15px 40px}
 .tit_todo{padding-top:35px;font-size:34px;text-align:center}
 .create_todo{display:flex;padding-top:20px}
 
