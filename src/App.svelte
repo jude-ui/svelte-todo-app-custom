@@ -58,7 +58,6 @@
           oldIndex: e.oldIndex,
           newIndex: e.newIndex
         })
-        isOrderEdit
       }
     })
   });
